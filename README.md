@@ -35,23 +35,6 @@ To use the evaluation script (`metrics.py`): see
 requirements.  Install `coco-caption` in `evaluate/` and create an
 empty `__init__.py` in `evaluate/` so it can be imported as a module.
 
-## Data & Pre-trained Model
-
-You can download pre-extracted [training](https://staff.fnwi.uva.nl/d.elliott/satyrid/train-cnn_features.hdf5), [dev](https://staff.fnwi.uva.nl/d.elliott/satyrid/dev-cnn_features.hdf5), and [test](https://staff.fnwi.uva.nl/d.elliott/satyrid/test-cnn_features.hdf5) features for the Flickr30K dataset:
-
-* The HDF5 file contains the CONV_5,4 image feature vectors. Each
-  image vector is stored as a flattened (14, 14, 512) `ndarray`, which
-  will be reshaped into a (14x14, 512) `ndarray` when it is used by
-  the model.
-
-You can download the pre-extracted [training](https://staff.fnwi.uva.nl/d.elliott/satyrid/train.pkl), [development](https://staff.fnwi.uva.nl/d.elliott/satyrid/dev.pkl), and [test](https://staff.fnwi.uva.nl/d.elliott/satyrid/test.pkl) sentences and [the dictionary](https://staff.fnwi.uva.nl/d.elliott/satyrid/dictionary.pkl).
-
-* The numpy file contains a list of ((sentence, index)) tuples. The
-  `index` entry is directly mapped to the `index` of the visual
-  feature vector in the HDF5 file.
-
-You can also [download a pre-trained model](https://staff.fnwi.uva.nl/d.elliott/satyrid/flickr30k.model.tgz) for this dataset.
-  
 ## Creating new dataset objects
 
 `make_dataset.py` takes care of creating the image features file and
